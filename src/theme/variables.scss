@@ -74,6 +74,21 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-divider-color: #444444;
+
+  --icon-checklist: url("../assets/icons/icon-checklist-black.png") no-repeat center/contain;
+  --icon-mobile: url("../assets/icons/icon-mobile-black.png") no-repeat center/contain;
+  --icon-moon: url("../assets/icons/icon-moon-black.png") no-repeat center/contain;
+  --icon-offline: url("../assets/icons/icon-offline-black.png") no-repeat center/contain;
+  --icon-online: url("../assets/icons/icon-online-black.png") no-repeat center/contain;
+  --icon-person-online: url("../assets/icons/icon-person-online-black.png") no-repeat center/contain;
+  --icon-person-speaking: url("../assets/icons/icon-person-speaking-black.png") no-repeat center/contain;
+  --icon-info: url("../assets/icons/icon-info-black.png") no-repeat center/contain;
+  --icon-list: url("../assets/icons/icon-list-black.png") no-repeat center/contain;
+  --icon-code: url("../assets/icons/icon-code-black.png") no-repeat center/contain;
+  --icon-question: url("../assets/icons/icon-question-black.png") no-repeat center/contain;
+  --icon-attendance: url("../assets/icons/icon-attendance-black.png") no-repeat center/contain;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +160,21 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-divider-color: #444444;
+    
+    --icon-checklist: url("../assets/icons/icon-checklist-white.png") no-repeat center/contain;
+    --icon-mobile: url("../assets/icons/icon-mobile-white.png") no-repeat center/contain;
+    --icon-moon: url("../assets/icons/icon-moon-white.png") no-repeat center/contain;
+    --icon-offline: url("../assets/icons/icon-offline-white.png") no-repeat center/contain;
+    --icon-online: url("../assets/icons/icon-online-white.png") no-repeat center/contain;
+    --icon-person-online: url("../assets/icons/icon-person-online-white.png") no-repeat center/contain;
+    --icon-person-speaking: url("../assets/icons/icon-person-speaking-white.png") no-repeat center/contain;
+    --icon-info: url("../assets/icons/icon-info-white.png") no-repeat center/contain;
+    --icon-list: url("../assets/icons/icon-list-white.png") no-repeat center/contain;
+    --icon-code: url("../assets/icons/icon-code-white.png") no-repeat center/contain;
+    --icon-question: url("../assets/icons/icon-question-white.png") no-repeat center/contain;
+    --icon-attendance: url("../assets/icons/icon-attendance-white.png") no-repeat center/contain;
   }
 
   /*
@@ -234,3 +264,5 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+@import "icons";

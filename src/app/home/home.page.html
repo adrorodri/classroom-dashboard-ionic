@@ -1,20 +1,79 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="container">
+  <div class="header-container" *ngIf="session">
+    <div class="header-item-container">
+      <div class="icon-info"></div>
+      <label tappable (click)="openSessionInfo(session)">{{session?.date}}</label>
+      <div class="icon-list"></div>
+    </div>
+    <div class="header-item-container">
+      <label class="center-title">Progra 3</label>
+    </div>
+    <div class="header-item-container">
+      <label>Code:</label>
+      <label>{{session.attendanceCode}}</label>
+      <div class="icon-code"></div>
+    </div>
   </div>
+  <div class="cards-container">
+    <div class="card" *ngIf="attendees">
+      <div class="card-header">
+        <label>Attendance</label>
+        <div class="icon-checklist"></div>
+      </div>
+      <div class="card-content">
+        <div class="list-item" >
+          <div class="icon icon-question"></div>
+          <label class="list-item-header">Missing: ({{attendeesMissing.length}})</label>
+        </div>
+        <label class="list-value" *ngFor="let attendee of attendeesMissing">{{attendee | resolveName:users | async}}</label>
+
+        <div class="list-item" >
+          <div class="icon icon-attendance"></div>
+          <label class="list-item-header">Attendance: ({{attendees.length}})</label>
+        </div>
+      </div>
+    </div>
+    <div class="card" *ngIf="participations">
+      <div class="card-header">
+        <label>Participations</label>
+        <div class="icon-person-speaking"></div>
+      </div>
+      <div class="card-content">
+        <ion-button tappable (click)="pickRandomUser()">Pick Random</ion-button>
+        <label class="list-value" *ngFor="let participation of participations">{{participation.substring(0,5) | resolveName:users | async}}</label>
+      </div>
+    </div>
+    <div class="card" *ngIf="users">
+      <div class="card-header">
+        <label>Online Status</label>
+        <div class="icon-person-online"></div>
+      </div>
+      <div class="card-content">
+        <div class="list-item" >
+          <div class="icon icon-mobile"></div>
+          <label class="list-item-header">Mobile: ({{mobile.length}})</label>
+        </div>
+        <label class="list-value" *ngFor="let user of mobile">{{user.name}}</label>
+
+        <div class="list-item" >
+          <div class="icon icon-idle"></div>
+          <label class="list-item-header">Idle: ({{idle.length}})</label>
+        </div>
+        <label class="list-value" *ngFor="let user of idle">{{user.name}}</label>
+
+        <div class="list-item">
+          <div class="icon icon-online"></div>
+          <label class="list-item-header">Online: ({{online.length}})</label>
+        </div>
+        <label class="list-value" *ngFor="let user of online">{{user.name}}</label>
+
+        <div class="list-item">
+          <div class="icon icon-offline"></div>
+          <label class="list-item-header">Offline: ({{offline.length}})</label>
+        </div>
+        <label class="list-value" *ngFor="let user of offline">{{user.name}}</label>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

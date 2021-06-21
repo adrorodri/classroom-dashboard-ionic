@@ -1,5 +1,7 @@
 {
   "name": "Attendance Dashboard",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
