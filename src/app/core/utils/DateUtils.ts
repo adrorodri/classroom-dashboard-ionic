@@ -1,6 +1,9 @@
 export class DateUtils {
-  public static getTodayString(): string {
-    const today = new Date();
-    return today.toDateString();
+  static getTodayString(): string {
+    let today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+    return mm + '-' + dd + '-' + yyyy;
   }
 }
